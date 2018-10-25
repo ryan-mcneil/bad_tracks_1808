@@ -9,11 +9,11 @@ describe 'add a song to cart' do
 
       click_on "Add to Cart"
 
-      expect(page).to have_content("Added Song to Cart")
+      expect(page).to have_content("Added #{song_1.title} to Cart")
 
       click_on "View Cart"
 
-      expect(current_path).to eq(cart_path)
+      expect(current_path).to eq(carts_path)
       expect(page).to have_content(song_1.title)
     end
   end
